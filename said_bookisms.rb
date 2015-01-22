@@ -38,5 +38,7 @@ said_bookisms = %w(
   whisper
 )
 
+puts "Said bookisms:"
+puts "----------------------"
 scanner = Scanner.new(ARGV[0], said_bookisms)
 scanner.scan!

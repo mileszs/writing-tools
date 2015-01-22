@@ -3,3 +3,46 @@ These are tools I use to analyze my own writing for words or patterns I shouldn'
 > Shouldn't be using? What does that mean?
 
 Either [someone has advised writers](http://litreactor.com/essays/chuck-palahniuk/nuts-and-bolts-%E2%80%9Cthought%E2%80%9D-verbs) not use the word or pattern, or I don't like it.
+
+First, clone this. Then, put the piece of writing you want to scan in a plain text file somewhere, preferably in the writing-tools directory (for ease of use). You will pass the path to that file to this tool.
+
+Here's how it might go, if I had already put a file called `piece.txt` in there.
+
+```
+cd writing-tools
+bundle install
+ruby runthis.rb piece.txt
+```
+Output:
+
+```
+Thought verbs:
+----------------------
+5: worry
+33: worry
+37: think
+67: know
+111: know
+115: think
+117: imagine
+135: realize
+161: know
+167: think
+181: think
+189: thought
+227: know
+235: hate
+Total Occurrences: 14
+
+********************************************
+Said bookisms:
+----------------------
+83: shout
+95: shout
+113: whisper
+131: whisper
+229: whisper
+241: shout
+241: shriek
+Total Occurrences: 7
+```

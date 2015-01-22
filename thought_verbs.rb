@@ -28,5 +28,7 @@ thought_verb_words = %w(
   forgot
 )
 
+puts "Thought verbs:"
+puts "----------------------"
 scanner = Scanner.new(ARGV[0], thought_verb_words)
 scanner.scan!
