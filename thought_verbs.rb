@@ -5,6 +5,8 @@
 # Do it like this:
 #   ./thought_verbs.rb piece-of-writing.txt
 
+require_relative 'scanner'
+
 thought_verb_words = %w(
   think
   thought
@@ -26,13 +28,5 @@ thought_verb_words = %w(
   forgot
 )
 
-occurrences = 0
-File.foreach(ARGV[0]).with_index do |line, line_num|
-  thought_verb_words.each do |word|
-    unless line.scan(word).empty?
-      occurrences += 1
-      puts "#{line_num}: #{word}"
-    end
-  end
-end
-puts "Total Occurrences: #{occurrences}"
+scanner = Scanner.new(ARGV[0], thought_verb_words)
+scanner.scan!

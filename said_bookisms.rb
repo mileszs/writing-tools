@@ -22,6 +22,8 @@
 # Use it like this:
 #   ./said_bookisms.rb piece-of-writing.txt
 
+require_relative 'scanner'
+
 said_bookisms = %w(
   demand
   declare
@@ -36,13 +38,5 @@ said_bookisms = %w(
   whisper
 )
 
-occurrences = 0
-File.foreach(ARGV[0]).with_index do |line, line_num|
-  said_bookisms.each do |word|
-    unless line.scan(word).empty?
-      occurrences += 1
-      puts "#{line_num}: #{word}"
-    end
-  end
-end
-puts "Total Occurrences: #{occurrences}"
+scanner = Scanner.new(ARGV[0], said_bookisms)
+scanner.scan!
